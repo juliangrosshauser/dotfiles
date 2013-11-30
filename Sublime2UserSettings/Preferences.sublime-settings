@@ -10,22 +10,23 @@
 			"selector": "string.quoted.double.html,string.quoted.single.html, source.css"
 		}
 	],
-	"theme": "Soda Dark.sublime-theme",
-	"soda_classic_tabs": true,
-	"soda_folder_icons": true,
 	"color_scheme": "Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme",
 	"ensure_newline_at_eof_on_save": true,
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"Vintage",
+		"Markdown"
 	],
+	"indent_to_bracket": true,
 	"rulers":
 	[
 		80
 	],
+	"soda_classic_tabs": true,
+	"soda_folder_icons": true,
 	"tab_size": 2,
+	"theme": "Soda Dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"indent_to_bracket": true,
 	"trim_trailing_white_space_on_save": true
 }

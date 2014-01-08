@@ -1,0 +1,8 @@
+[
+	{ "keys": ["super+v"], "command": "paste_and_indent" },
+	{ "keys": ["super+shift+v"], "command": "paste" },
+  { "keys": ["super+alt+n"], "command": "new_file" },
+  { "keys": ["super+n"], "command": "advanced_new_file"},
+  { "keys": ["super+ctrl+option+a"], "command": "sublimelinter_show_all_errors" },
+  { "keys": ["super+ctrl+a"], "command": "alignment" }
+]

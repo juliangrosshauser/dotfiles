@@ -10,13 +10,18 @@
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     # make rebase save on os x
     trustctime = false
+[help]
+    format = web
+    autocorrect = 1
 [alias]
     ls = ls-files
     ign = ls-files -o -i --exclude-standard
 [branch]
     autosetupmerge = true
+[push]
+    default = simple
 [color]
-    ui = auto
+    ui = true
 [color "branch"]
     current = white
     local = blue
@@ -26,19 +31,15 @@
     frag = magenta bold
     old = red bold
     new = green bold
-  whitespace = red reverse
+    whitespace = red reverse
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
-[help]
-    format = web
+[merge]
+    tool = sublime
+[mergetool]
+	keepBackup = false
 [mergetool "sublime"]
     cmd = subl -w $MERGED
     trustExitCode = false
-[merge]
-    tool = sublime
-[push]
-    default = simple
-[mergetool]
-    keepBackup = true

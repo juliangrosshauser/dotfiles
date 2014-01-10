@@ -1,8 +1,6 @@
 # oh-my-zsh
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="af-magic"
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
 DISABLE_CORRECTION="true"
 plugins=(osx brew)
 source $ZSH/oh-my-zsh.sh

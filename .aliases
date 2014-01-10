@@ -34,6 +34,7 @@ alias grm='git rm'
 alias gmv='git mv'
 alias gst='git stash'
 alias gd='git diff'
+alias gr='git reset'
 
 alias subl='subl -a'
 alias c='pygmentize -O style=monokai -f console256 -g'

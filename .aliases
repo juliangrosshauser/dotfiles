@@ -1,19 +1,11 @@
 alias sudo='sudo '
 
-# use brew findutils with their unprefixed names
-alias find='gfind'
-alias locate='glocate'
-alias updatedb='gupdatedb'
-alias xargs='gxargs'
-
-alias rm='trash'
-alias rrm='command rm -i'
+alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-alias ls='command ls --color'
+alias ls='ls --color'
 
-alias git='hub'
 alias gs='git status'
 alias ga='git add'
 alias gb='git branch'
@@ -29,12 +21,22 @@ alias gu='git pull'
 alias gi='git init'
 alias gm='git merge'
 alias gmt='git mergetool'
-alias gf='git diff-tree --no-commit-id --name-only -r'
+alias gd='git diff'
+alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias grm='git rm'
 alias gmv='git mv'
 alias gst='git stash'
-alias gd='git diff'
 alias gr='git reset'
+alias gf='git fetch'
 
-alias subl='subl -a'
-alias c='pygmentize -O style=monokai -f console256 -g'
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  # use brew findutils with their unprefixed names
+  alias find='gfind'
+  alias locate='glocate'
+  alias updatedb='gupdatedb'
+  alias xargs='gxargs'
+
+  alias git='hub'
+  alias subl='subl -a'
+  alias c='pygmentize -O style=monokai -f console256 -g'
+fi

@@ -1,6 +1,6 @@
 # oh-my-zsh
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="af-magic"
+ZSH_THEME="pure"
 DISABLE_CORRECTION="true"
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then

@@ -13,6 +13,11 @@ if [ ! -d "$JANUS" ]; then
   curl -Lo- https://bit.ly/janus-bootstrap | bash
 fi
 
+if hash npm 2>/dev/null; then
+  npm install -g pure-prompt
+  ln -s /usr/local/lib/node_modules/pure-prompt/pure.zsh $OH_MY_ZSH/custom/pure.zsh-theme
+fi
+
 # backup existing files
 for i in ~/.aliases ~/.functions ~/.vimrc.after ~/.zshrc; do
   if [ -e $i ]; then

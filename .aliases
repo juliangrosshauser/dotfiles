@@ -38,5 +38,5 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
 
   alias git='hub'
   alias subl='subl -a'
-  alias c='pygmentize -O style=monokai -f console256 -g'
+  alias c='rougify'
 fi

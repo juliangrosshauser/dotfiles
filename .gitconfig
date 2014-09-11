@@ -1,10 +1,10 @@
 [user]
     name = Julian Grosshauser
-    email = hey@juliangrosshauser.com
+    email = julian@juliangrosshauser.com
 [credential]
     helper = osxkeychain
 [core]
-    editor = subl -n -w
+    editor = atom -n -w
     autocrlf = input
     safecrlf = true
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -37,9 +37,9 @@
     changed = green
     untracked = cyan
 [merge]
-    tool = sublime
+    tool = atom
 [mergetool]
 	keepBackup = false
 [mergetool "sublime"]
-    cmd = subl -w $MERGED
+    cmd = atom -w $MERGED
     trustExitCode = false

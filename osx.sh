@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
 # allow text selection Quick Look window
 defaults write com.apple.finder QLEnableTextSelection -bool true
 

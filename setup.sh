@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/bin/sh
+
 OH_MY_ZSH = ~/.oh-my-zsh
 JANUS = ~/.vim/janus
 

@@ -1,9 +1,18 @@
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+
 # use brew coreutils with their unprefixed names
-PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+
 # find brew coreutils in man with their unprefixed names
-MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
-LC_ALL="en_US.UTF-8"
-LANG="en_US"
-VAGRANT_DEFAULT_PROVIDER=parallels
+export MANPATH='/usr/local/opt/coreutils/libexec/gnuman:$MANPATH'
+
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+
+export JAVA_HOME='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
+
+export VAGRANT_DEFAULT_PROVIDER='parallels'

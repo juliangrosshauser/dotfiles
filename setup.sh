@@ -1,7 +1,7 @@
 #!/bin/sh
 
-OH_MY_ZSH = ~/.oh-my-zsh
-JANUS = ~/.vim/janus
+OH_MY_ZSH=~/.oh-my-zsh
+JANUS=~/.vim/janus
 
 # install dependencies
 if [ ! -d "$OH_MY_ZSH" ]; then

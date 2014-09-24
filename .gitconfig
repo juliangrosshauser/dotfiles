@@ -4,7 +4,7 @@
 [credential]
     helper = osxkeychain
 [core]
-    editor = atom -n -w
+    editor = vim
     autocrlf = input
     safecrlf = true
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -37,9 +37,6 @@
     changed = green
     untracked = cyan
 [merge]
-    tool = atom
+    tool = gvimdiff
 [mergetool]
 	keepBackup = false
-[mergetool "sublime"]
-    cmd = atom -w $MERGED
-    trustExitCode = false

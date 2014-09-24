@@ -1,7 +1,6 @@
 #!/bin/sh
 
 OH_MY_ZSH=~/.oh-my-zsh
-JANUS=~/.vim/janus
 
 # install dependencies
 if [ ! -d "$OH_MY_ZSH" ]; then
@@ -9,13 +8,8 @@ if [ ! -d "$OH_MY_ZSH" ]; then
   curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 fi
 
-if [ ! -d "$JANUS" ]; then
-  # install janus
-  curl -Lo- https://bit.ly/janus-bootstrap | bash
-fi
-
 # backup existing files
-for i in ~/.aliases ~/.functions ~/.vimrc.after ~/.zshrc; do
+for i in ~/.aliases ~/.functions ~/.vimrc ~/.zshrc; do
   if [ -e $i ]; then
     mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
     echo "${i} has been renamed to ${i}.backup"
@@ -24,7 +18,7 @@ done
 
 ln -s $PWD/.aliases ~/.aliases
 ln -s $PWD/.functions ~/.functions
-ln -s $PWD/.vimrc.after ~/.vimrc.after
+ln -s $PWD/.vimrc ~/.vimrc
 ln -s $PWD/.zshrc ~/.zshrc
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then

@@ -16,10 +16,10 @@ for i in ~/.aliases ~/.functions ~/.vimrc ~/.zshrc; do
   fi
 done
 
-ln -s $PWD/.aliases ~/.aliases
-ln -s $PWD/.functions ~/.functions
-ln -s $PWD/.vimrc ~/.vimrc
-ln -s $PWD/.zshrc ~/.zshrc
+ln -s $PWD/aliases ~/.aliases
+ln -s $PWD/functions ~/.functions
+ln -s $PWD/vimrc ~/.vimrc
+ln -s $PWD/zshrc ~/.zshrc
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   # backup existing files
@@ -30,9 +30,9 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     fi
   done
 
-  ln -s $PWD/.gitconfig ~/.gitconfig
-  ln -s $PWD/.gemrc ~/.gemrc
-  ln -s $PWD/.zshenv ~/.zshenv
+  ln -s $PWD/gitconfig ~/.gitconfig
+  ln -s $PWD/gemrc ~/.gemrc
+  ln -s $PWD/zshenv ~/.zshenv
 fi
 
 echo "dotfiles setup complete"

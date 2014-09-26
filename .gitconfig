@@ -40,3 +40,5 @@
     tool = gvimdiff
 [mergetool]
 	keepBackup = false
+[hub]
+	protocol = https

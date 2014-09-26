@@ -60,6 +60,9 @@ set guifont=Source\ Code\ Pro\ for\ Powerline:h11
 let g:airline_theme='base16'
 let g:airline_powerline_fonts=1
 
+let g:syntastic_check_on_open=1
+let g:syntastic_ruby_checkers=['mri', 'rubocop']
+
 " restore cursor position
 function! ResCur()
   if line("'\"") <= line("$")

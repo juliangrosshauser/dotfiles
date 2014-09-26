@@ -118,7 +118,7 @@ nmap <cr> o<esc>
 nmap <s-enter> O<esc>
 
 " open ~/.vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ev :split $MYVIMRC<cr>
 
 " source ~/.vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>

@@ -13,7 +13,7 @@ alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit -a'
 alias gcam='git commit -am'
-alias go='git checkout'
+alias gco='git checkout'
 alias gl='git log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --graph --date=relative'
 alias gn='git clone'
 alias gp='git push'
@@ -39,4 +39,6 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   alias git='hub'
   alias subl='subl -a'
   alias c='rougify'
+
+  alias ghpr='git pull-request'
 fi

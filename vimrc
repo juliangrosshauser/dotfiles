@@ -15,6 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rizzatti/dash.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 
@@ -63,6 +64,7 @@ let g:airline_powerline_fonts=1
 
 let g:syntastic_check_on_open=1
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
+let g:syntastic_go_checkers=['govet', 'golint']
 
 " restore cursor position
 function! ResCur()
@@ -123,3 +125,8 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 
 " source ~/.vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)

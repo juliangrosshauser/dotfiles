@@ -16,6 +16,11 @@ export VISUAL='vim'
 export PAGER='less'
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
-  export JAVA_HOME='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
+  #export JAVA_HOME='/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
+  export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+  export ANDROID_HOME='/usr/local/opt/android-sdk'
+  export ANDROID_NDK_HOME='/usr/local/opt/android-ndk'
   export VAGRANT_DEFAULT_PROVIDER='parallels'
+  export GOPATH=$HOME/dev/go
+  export PATH=$PATH:$GOPATH/bin
 fi

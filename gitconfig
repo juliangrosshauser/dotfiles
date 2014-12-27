@@ -36,10 +36,19 @@
     added = yellow
     changed = green
     untracked = cyan
-[merge]
-    tool = gvimdiff
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+  prompt = false
+[diff]
+  tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool]
-	keepBackup = false
+  keepBackup = false
+  prompt = false
+[merge]
+    tool = Kaleidoscope
 [hub]
 	protocol = https
 [filter "media"]

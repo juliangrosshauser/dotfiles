@@ -19,7 +19,7 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 fi
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 source ~/.aliases
 source ~/.functions
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

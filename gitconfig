@@ -18,6 +18,7 @@
     ign = ls-files -o -i --exclude-standard
 [branch]
     autosetupmerge = true
+	autosetuprebase = always
 [push]
     default = simple
 [color]

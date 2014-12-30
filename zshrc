@@ -8,18 +8,27 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   plugins=(bower brew gem npm osx pod vagrant zsh-syntax-highlighting)
-  source $ZSH/oh-my-zsh.sh
-
-  # setup z
-  . `brew --prefix`/etc/profile.d/z.sh
-
-  # base16 color scheme
-  BASE16_SCHEME="bright"
-  BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
-  [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+else
+  plugins=(bower gem npm zsh-syntax-highlighting)
 fi
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+source $ZSH/oh-my-zsh.sh
+
+# set base16 colorscheme
+BASE16_SCHEME="bright"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
+
+# setup z
+if command -v brew >/dev/null 2>&1; then
+  . `brew --prefix`/etc/profile.d/z.sh
+else
+  . ~/.z/z.sh
+fi
+
+if command -v rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
 
 source ~/.aliases
 source ~/.functions

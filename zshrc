@@ -26,9 +26,5 @@ else
   . ~/.z/z.sh
 fi
 
-if command -v rbenv >/dev/null 2>&1; then
-  eval "$(rbenv init -)"
-fi
-
 source ~/.aliases
 source ~/.functions

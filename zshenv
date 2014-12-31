@@ -28,3 +28,7 @@ if command -v go >/dev/null 2>&1; then
   export GOPATH=$HOME/dev/go
   export PATH=$PATH:$GOPATH/bin
 fi
+
+if command -v rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi

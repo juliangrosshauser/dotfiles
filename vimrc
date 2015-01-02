@@ -26,7 +26,8 @@ set backspace=indent,eol,start
 set history=512
 set title
 set visualbell
-set number
+set nonumber
+set relativenumber
 set ruler
 set cursorline
 set showmatch

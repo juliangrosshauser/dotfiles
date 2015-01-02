@@ -59,3 +59,6 @@ fi
 if command -v gxargs >/dev/null 2>&1; then
   alias xargs='gxargs'
 fi
+if command -v gsed >/dev/null 2>&1; then
+  alias sed='gsed'
+fi

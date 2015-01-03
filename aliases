@@ -6,6 +6,8 @@ alias mv='mv -i'
 alias mkdir='mkdir -p'
 alias ls='ls --color'
 
+alias crlf-to-lf='sed '"'"'s/\r$//'"'"
+
 if command -v git >/dev/null 2>&1; then
   alias gs='git status -sb'
   alias ga='git add'

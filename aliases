@@ -38,6 +38,10 @@ if command -v git >/dev/null 2>&1; then
     alias git='hub'
     alias ghpr='git pull-request'
   fi
+
+  if command -v gittower >/dev/null 2>&1; then
+    alias tower='gittower'
+  fi
 fi
 
 if command -v subl >/dev/null 2>&1; then

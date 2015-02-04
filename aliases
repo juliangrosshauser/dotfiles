@@ -33,6 +33,10 @@ if command -v git >/dev/null 2>&1; then
   alias gr='git reset'
   alias grh='git reset --hard'
   alias gf='git fetch'
+  alias grb='git rebase'
+  alias grbi='git rebase -i'
+  alias grbc='git rebase --continue'
+  alias grba='git rebase --abort'
 
   if command -v hub >/dev/null 2>&1; then
     alias git='hub'

@@ -61,6 +61,16 @@ if [ $LINK_ONLY -eq 0 ]; then
   git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
   echo "Installed base16 shell colorschemes"
 
+  # install Vundle.vim
+  if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+    if [ ! -d ~/.vim/bundle ]; then
+      mkdir -p ~/.vim/bundle
+    fi
+
+    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    echo "Installed Vundle.vim"
+  fi
+
   echo "Installed all dependencies"
 fi
 

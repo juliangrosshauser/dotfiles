@@ -67,6 +67,11 @@ if [ $LINK_ONLY -eq 0 ]; then
   if [ ! -d "$OH_MY_ZSH" ]; then
     # install oh-my-zsh
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+
+    if [ -f ~/.zshrc.pre-oh-my-zsh ]; then
+      mv -f ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+    fi
+
     echo "Installed oh-my-zsh"
   fi
 

@@ -48,7 +48,7 @@ if [ $LINK_ONLY -eq 0 ]; then
   echo "Installed zsh-syntax-highlighting"
 
   # install z
-  git clone https://github.com/rupa/z.git ~/.z
+  git clone https://github.com/rupa/z.git ~/.z-git
   echo "Installed z"
 
   # install base16 shell colorschemes

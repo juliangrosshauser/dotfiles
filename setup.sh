@@ -48,7 +48,13 @@ if [ $LINK_ONLY -eq 0 ]; then
   echo "Installed zsh-syntax-highlighting"
 
   # install z
-  git clone https://github.com/rupa/z.git ~/.z-git
+  if command -v brew >/dev/null 2>&1; then
+    if [ ! -d `brew --prefix`/etc/profile.d/z.sh ]; then
+      brew install z
+    fi
+  else
+    git clone https://github.com/rupa/z.git ~/.z-git
+  fi
   echo "Installed z"
 
   # install base16 shell colorschemes

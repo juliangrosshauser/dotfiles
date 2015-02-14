@@ -17,6 +17,33 @@ while getopts ":hl" opt; do
   esac
 done
 
+# backup existing files
+for i in ~/.aliases ~/.functions ~/.gemrc ~/.vimrc ~/.zshenv ~/.zshrc; do
+  if [ -e $i ]; then
+    mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
+    echo "${i} has been renamed to ${i}.backup"
+  fi
+done
+
+ln -s $PWD/aliases ~/.aliases
+ln -s $PWD/functions ~/.functions
+ln -s $PWD/gemrc ~/.gemrc
+ln -s $PWD/vimrc ~/.vimrc
+ln -s $PWD/zshenv ~/.zshenv
+ln -s $PWD/zshrc ~/.zshrc
+
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+  # backup existing file
+  if [ -e ~/.gitconfig ]; then
+    mv "~/.gitconfig" "~/.gitconfig.backup" || die "Could not move ~/.gitconfig to ~/.gitconfig.backup"
+    echo "~/.gitconfig has been renamed to ~/.gitconfig.backup"
+  fi
+
+  ln -s $PWD/gitconfig ~/.gitconfig
+fi
+
+echo "Successfully linked dotfiles"
+
 if [ $LINK_ONLY -eq 0 ]; then
   # check dependencies
 
@@ -73,33 +100,6 @@ if [ $LINK_ONLY -eq 0 ]; then
 
   echo "Installed all dependencies"
 fi
-
-# backup existing files
-for i in ~/.aliases ~/.functions ~/.gemrc ~/.vimrc ~/.zshenv ~/.zshrc; do
-  if [ -e $i ]; then
-    mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
-    echo "${i} has been renamed to ${i}.backup"
-  fi
-done
-
-ln -s $PWD/aliases ~/.aliases
-ln -s $PWD/functions ~/.functions
-ln -s $PWD/gemrc ~/.gemrc
-ln -s $PWD/vimrc ~/.vimrc
-ln -s $PWD/zshenv ~/.zshenv
-ln -s $PWD/zshrc ~/.zshrc
-
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  # backup existing file
-  if [ -e ~/.gitconfig ]; then
-    mv "~/.gitconfig" "~/.gitconfig.backup" || die "Could not move ~/.gitconfig to ~/.gitconfig.backup"
-    echo "~/.gitconfig has been renamed to ~/.gitconfig.backup"
-  fi
-
-  ln -s $PWD/gitconfig ~/.gitconfig
-fi
-
-echo "Successfully linked dotfiles"
 
 echo "dotfiles setup complete"
 exit 0

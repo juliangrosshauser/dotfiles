@@ -100,6 +100,10 @@ if [ $LINK_ONLY -eq 0 ]; then
     fi
 
     git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+    # install Vundle.vim plugins
+    vim +PluginInstall +qall
+
     echo "Installed Vundle.vim"
   fi
 

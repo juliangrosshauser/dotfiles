@@ -108,6 +108,14 @@ if [ $LINK_ONLY -eq 0 ]; then
   fi
 
   echo "Installed all dependencies"
+
+  if [[ "$OSTYPE" =~ ^darwin ]]; then
+    # force quiet logins
+    if [ ! -f ~/.hushlogin ]; then
+      touch ~/.hushlogin
+      echo "Forced quiet logins by creating ~/.hushlogin"
+    fi
+  fi
 fi
 
 echo "dotfiles setup complete"

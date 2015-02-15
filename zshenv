@@ -22,8 +22,15 @@ fi
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   export JAVA_HOME=$(/usr/libexec/java_home)
-  export ANDROID_HOME='/usr/local/opt/android-sdk'
-  export ANDROID_NDK_HOME='/usr/local/opt/android-ndk'
+
+  if [ -d /usr/local/opt/android-sdk ]; then
+    export ANDROID_HOME='/usr/local/opt/android-sdk'
+  fi
+
+  if [ -d /usr/local/opt/android-ndk ]; then
+    export ANDROID_NDK_HOME='/usr/local/opt/android-ndk'
+  fi
+
   export VAGRANT_DEFAULT_PROVIDER='parallels'
   export NVM_DIR=~/.nvm
 

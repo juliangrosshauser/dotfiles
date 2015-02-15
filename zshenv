@@ -35,7 +35,7 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   fi
 
   export VAGRANT_DEFAULT_PROVIDER='parallels'
-  export NVM_DIR=~/.nvm
+  export NVM_DIR=$HOME/.nvm
 
   if command -v brew >/dev/null 2>&1; then
     if [ -f $(brew --prefix nvm)/nvm.sh ]; then

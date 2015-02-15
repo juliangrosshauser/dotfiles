@@ -18,28 +18,28 @@ while getopts ":hl" opt; do
 done
 
 # backup existing files
-for i in ~/.aliases ~/.functions ~/.gemrc ~/.vimrc ~/.zshenv ~/.zshrc; do
+for i in $HOME/.aliases $HOME/.functions $HOME/.gemrc $HOME/.vimrc $HOME/.zshenv $HOME/.zshrc; do
   if [ -e $i ]; then
     mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
     echo "${i} has been renamed to ${i}.backup"
   fi
 done
 
-ln -s $PWD/aliases ~/.aliases
-ln -s $PWD/functions ~/.functions
-ln -s $PWD/gemrc ~/.gemrc
-ln -s $PWD/vimrc ~/.vimrc
-ln -s $PWD/zshenv ~/.zshenv
-ln -s $PWD/zshrc ~/.zshrc
+ln -s $PWD/aliases $HOME/.aliases
+ln -s $PWD/functions $HOME/.functions
+ln -s $PWD/gemrc $HOME/.gemrc
+ln -s $PWD/vimrc $HOME/.vimrc
+ln -s $PWD/zshenv $HOME/.zshenv
+ln -s $PWD/zshrc $HOME/.zshrc
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   # backup existing file
-  if [ -e ~/.gitconfig ]; then
-    mv "~/.gitconfig" "~/.gitconfig.backup" || die "Could not move ~/.gitconfig to ~/.gitconfig.backup"
+  if [ -e $HOME/.gitconfig ]; then
+    mv "$HOME/.gitconfig" "$HOME/.gitconfig.backup" || die "Could not move ~/.gitconfig to ~/.gitconfig.backup"
     echo "~/.gitconfig has been renamed to ~/.gitconfig.backup"
   fi
 
-  ln -s $PWD/gitconfig ~/.gitconfig
+  ln -s $PWD/gitconfig $HOME/.gitconfig
 fi
 
 echo "Successfully linked dotfiles"
@@ -62,14 +62,14 @@ if [ $LINK_ONLY -eq 0 ]; then
 
   # install dependencies
 
-  OH_MY_ZSH=~/.oh-my-zsh
+  OH_MY_ZSH=$HOME/.oh-my-zsh
 
   if [ ! -d "$OH_MY_ZSH" ]; then
     # install oh-my-zsh
     curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-    if [ -f ~/.zshrc.pre-oh-my-zsh ]; then
-      mv -f ~/.zshrc.pre-oh-my-zsh ~/.zshrc
+    if [ -f $HOME/.zshrc.pre-oh-my-zsh ]; then
+      mv -f $HOME/.zshrc.pre-oh-my-zsh $HOME/.zshrc
     fi
 
     echo "Installed oh-my-zsh"
@@ -85,21 +85,21 @@ if [ $LINK_ONLY -eq 0 ]; then
       brew install z
     fi
   else
-    git clone https://github.com/rupa/z.git ~/.z-git
+    git clone https://github.com/rupa/z.git $HOME/.z-git
   fi
   echo "Installed z"
 
   # install base16 shell colorschemes
-  git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+  git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
   echo "Installed base16 shell colorschemes"
 
   # install Vundle.vim
-  if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-    if [ ! -d ~/.vim/bundle ]; then
-      mkdir -p ~/.vim/bundle
+  if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
+    if [ ! -d $HOME/.vim/bundle ]; then
+      mkdir -p $HOME/.vim/bundle
     fi
 
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 
     # install Vundle.vim plugins
     vim +PluginInstall +qall
@@ -111,9 +111,9 @@ if [ $LINK_ONLY -eq 0 ]; then
 
   if [[ "$OSTYPE" =~ ^darwin ]]; then
     # force quiet logins
-    if [ ! -f ~/.hushlogin ]; then
-      touch ~/.hushlogin
-      echo "Forced quiet logins by creating ~/.hushlogin"
+    if [ ! -f $HOME/.hushlogin ]; then
+      touch $HOME/.hushlogin
+      echo "Forced quiet logins by creating $HOME/.hushlogin"
     fi
   fi
 fi

@@ -23,10 +23,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 if command -v brew >/dev/null 2>&1; then
   . `brew --prefix`/etc/profile.d/z.sh
 else
-  if [ -d ~/.z-git ]; then
-    . ~/.z-git/z.sh
+  if [ -d $HOME/.z-git ]; then
+    . $HOME/.z-git/z.sh
   fi
 fi
 
-source ~/.aliases
-source ~/.functions
+source $HOME/.aliases
+source $HOME/.functions

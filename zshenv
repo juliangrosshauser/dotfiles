@@ -21,6 +21,9 @@ if command -v go >/dev/null 2>&1; then
 fi
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
+  # java_home returns the path to a java home directory
+  # specify java version with `java_home -v 1.x`, where
+  # x is the desired java version
   export JAVA_HOME=$(/usr/libexec/java_home)
 
   if [ -d /usr/local/opt/android-sdk ]; then

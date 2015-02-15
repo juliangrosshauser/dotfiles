@@ -25,6 +25,13 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   export ANDROID_HOME='/usr/local/opt/android-sdk'
   export ANDROID_NDK_HOME='/usr/local/opt/android-ndk'
   export VAGRANT_DEFAULT_PROVIDER='parallels'
+  export NVM_DIR=~/.nvm
+
+  if command -v brew >/dev/null 2>&1; then
+    if [ -f $(brew --prefix nvm)/nvm.sh ]; then
+      source $(brew --prefix nvm)/nvm.sh
+    fi
+  fi
 fi
 
 if command -v rbenv >/dev/null 2>&1; then

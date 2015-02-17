@@ -115,6 +115,11 @@ if [ $LINK_ONLY -eq 0 ]; then
       touch $HOME/.hushlogin
       echo "Forced quiet logins by creating $HOME/.hushlogin"
     fi
+
+    # link subl
+    if [ -f "/Applications/Sublime Text 3.app/Contents/SharedSupport/bin/subl"]; then
+      ln -s "/Applications/Sublime Text 3.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+    fi
   fi
 fi
 

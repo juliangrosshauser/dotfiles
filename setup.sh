@@ -18,7 +18,7 @@ while getopts ":hl" opt; do
 done
 
 # backup existing files
-for i in $HOME/.aliases $HOME/.functions $HOME/.gemrc $HOME/.vimrc $HOME/.zshenv $HOME/.zshrc; do
+for i in $HOME/.aliases $HOME/.functions $HOME/.gemrc $HOME/.npmrc $HOME/.vimrc $HOME/.zshenv $HOME/.zshrc; do
   if [ -e $i ]; then
     mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
     echo "${i} has been renamed to ${i}.backup"
@@ -28,6 +28,7 @@ done
 ln -s $PWD/aliases $HOME/.aliases
 ln -s $PWD/functions $HOME/.functions
 ln -s $PWD/gemrc $HOME/.gemrc
+ln -s $PWD/npmrc $HOME/.npmrc
 ln -s $PWD/vimrc $HOME/.vimrc
 ln -s $PWD/zshenv $HOME/.zshenv
 ln -s $PWD/zshrc $HOME/.zshrc

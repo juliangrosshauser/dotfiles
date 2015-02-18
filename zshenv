@@ -1,11 +1,17 @@
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
-  # use brew coreutils with their unprefixed names
-  export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+  if command -v brew >/dev/null 2>&1; then
+    if [ -d $(brew --prefix coreutils)/libexec/gnubin ]; then
+      # use brew coreutils with their unprefixed names
+      export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+    fi
 
-  # find brew coreutils in man with their unprefixed names
-  export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+    if [ -d $(brew --prefix coreutils)/libexec/gnuman ]; then
+      # find brew coreutils in man with their unprefixed names
+      export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
+    fi
+  fi
 fi
 
 export LC_ALL='en_US.UTF-8'
@@ -24,7 +30,9 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   # java_home returns the path to a java home directory
   # specify java version with `java_home -v 1.x`, where
   # x is the desired java version
-  export JAVA_HOME=$(/usr/libexec/java_home)
+  if [ -f /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+  fi
 
   if [ -d /usr/local/opt/android-sdk ]; then
     export ANDROID_HOME='/usr/local/opt/android-sdk'
@@ -34,7 +42,10 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     export ANDROID_NDK_HOME='/usr/local/opt/android-ndk'
   fi
 
-  export VAGRANT_DEFAULT_PROVIDER='parallels'
+  if command -v vagrant >/dev/null 2>&1; then
+    export VAGRANT_DEFAULT_PROVIDER='parallels'
+  fi
+
   export NVM_DIR=$HOME/.nvm
 
   if command -v brew >/dev/null 2>&1; then

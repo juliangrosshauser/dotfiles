@@ -5,7 +5,7 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
   export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 
   # find brew coreutils in man with their unprefixed names
-  export MANPATH='/usr/local/opt/coreutils/libexec/gnuman:$MANPATH'
+  export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
 fi
 
 export LC_ALL='en_US.UTF-8'

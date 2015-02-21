@@ -13,7 +13,7 @@ function server() {
 }
 
 # copy with progress
-cpprogress () {
+function cpprogress() {
   rsync -WavP --human-readable --progress $1 $2
 }
 

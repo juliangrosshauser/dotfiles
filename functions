@@ -17,6 +17,22 @@ cpprogress () {
   rsync -WavP --human-readable --progress $1 $2
 }
 
+function brewupdate() {
+  brew update
+  brew upgrade
+}
+
+function gemupdate() {
+  gem update
+  gem cleanup
+}
+
+function npmupdate() {
+  npm cache clean
+  npm install -g npm@latest
+  npm update -g
+}
+
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   # cd into whatever is the forefront Finder window.
   function cdfinder() {

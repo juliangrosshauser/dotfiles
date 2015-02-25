@@ -32,10 +32,3 @@ function npmupdate() {
   npm install -g npm@latest
   npm update -g
 }
-
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  # cd into whatever is the forefront Finder window.
-  function cdfinder() {
-    cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
-  }
-fi

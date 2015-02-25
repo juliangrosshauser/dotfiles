@@ -33,3 +33,9 @@ function npmupdate() {
   npm install -g npm@latest
   npm update -g
 }
+
+function updatesystem() {
+  brewupdate
+  gemupdate
+  npmupdate
+}

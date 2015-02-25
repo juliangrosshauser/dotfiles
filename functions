@@ -18,17 +18,20 @@ function cpprogress() {
 }
 
 function brewupdate() {
+  echo -e "Updating brew\n"
   brew update
   brew upgrade
 }
 
 function gemupdate() {
+  echo -e "Updating gem\n"
   gem update --system
   gem update
   gem cleanup
 }
 
 function npmupdate() {
+  echo -e "Updating npm\n"
   npm cache clean
   npm install -g npm@latest
   npm update -g

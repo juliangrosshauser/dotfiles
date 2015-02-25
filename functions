@@ -23,6 +23,7 @@ function brewupdate() {
 }
 
 function gemupdate() {
+  gem update --system
   gem update
   gem cleanup
 }

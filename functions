@@ -39,6 +39,8 @@ function npmupdate() {
 
 function updatesystem() {
   brewupdate
+  echo ""
   gemupdate
+  echo ""
   npmupdate
 }

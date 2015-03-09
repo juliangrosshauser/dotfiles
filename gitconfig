@@ -6,7 +6,7 @@
 [core]
     editor = vim
     autocrlf = input
-    safecrlf = true
+    safecrlf = false
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     # make rebase save on os x
     trustctime = false

@@ -18,7 +18,7 @@ while getopts ":hl" opt; do
 done
 
 # backup existing files
-for i in $HOME/.aliases $HOME/.functions $HOME/.gemrc $HOME/.npmrc $HOME/.vimrc $HOME/.zshenv $HOME/.zshrc; do
+for i in $HOME/.aliases $HOME/.functions $HOME/.gemrc $HOME/.npmrc $HOME/.vimrc $HOME/.zshenv $HOME/.zshrc $HOME/.gitconfig $HOME/.lldbinit; do
   if [ -e $i ]; then
     mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
     echo "${i} has been renamed to ${i}.backup"
@@ -32,19 +32,8 @@ ln -s $PWD/npmrc $HOME/.npmrc
 ln -s $PWD/vimrc $HOME/.vimrc
 ln -s $PWD/zshenv $HOME/.zshenv
 ln -s $PWD/zshrc $HOME/.zshrc
-
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  # backup existing file
-  for i in $HOME/.gitconfig $HOME/.lldbinit; do
-    if [ -e $i ]; then
-      mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
-      echo "${i} has been renamed to ${i}.backup"
-    fi
-  done
-
-  ln -s $PWD/gitconfig $HOME/.gitconfig
-  ln -s $PWD/lldbinit $HOME/.lldbinit
-fi
+ln -s $PWD/gitconfig $HOME/.gitconfig
+ln -s $PWD/lldbinit $HOME/.lldbinit
 
 echo "Successfully linked dotfiles"
 

@@ -1,19 +1,5 @@
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  if command -v brew >/dev/null 2>&1; then
-    if [ -d $(brew --prefix coreutils)/libexec/gnubin ]; then
-      # use brew coreutils with their unprefixed names
-      export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
-    fi
-
-    if [ -d $(brew --prefix coreutils)/libexec/gnuman ]; then
-      # find brew coreutils in man with their unprefixed names
-      export MANPATH=$(brew --prefix coreutils)/libexec/gnuman:$MANPATH
-    fi
-  fi
-fi
-
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 

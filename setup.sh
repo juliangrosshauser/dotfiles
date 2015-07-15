@@ -83,16 +83,6 @@ if [ $LINK_ONLY -eq 0 ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $OH_MY_ZSH/custom/plugins/zsh-syntax-highlighting
   echo "Installed zsh-syntax-highlighting"
 
-  # install z
-  if command -v brew >/dev/null 2>&1; then
-    if [ ! -d `brew --prefix`/etc/profile.d/z.sh ]; then
-      brew install z
-    fi
-  else
-    git clone https://github.com/rupa/z.git $HOME/.z-git
-  fi
-  echo "Installed z"
-
   # install base16 shell colorschemes
   git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
   echo "Installed base16 shell colorschemes"

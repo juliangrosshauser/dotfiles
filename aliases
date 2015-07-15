@@ -4,7 +4,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-alias ls='ls --color'
+alias ls='gls --color'
 
 alias crlf-to-lf='sed '"'"'s/\r$//'"'"
 alias us='updatesystem'

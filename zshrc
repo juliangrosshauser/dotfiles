@@ -6,11 +6,7 @@ DISABLE_CORRECTION="true"
 DISABLE_UPDATE_PROMPT="true"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 
-if [[ "$OSTYPE" =~ ^darwin ]]; then
-  plugins=(bower brew gem npm osx pod vagrant zsh-syntax-highlighting)
-else
-  plugins=(bower gem npm zsh-syntax-highlighting)
-fi
+plugins=(zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

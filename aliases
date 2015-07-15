@@ -53,3 +53,5 @@ alias locate='glocate'
 alias updatedb='gupdatedb'
 alias xargs='gxargs'
 alias sed='gsed'
+
+alias ln='gln'

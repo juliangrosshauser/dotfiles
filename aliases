@@ -9,67 +9,47 @@ alias ls='ls --color'
 alias crlf-to-lf='sed '"'"'s/\r$//'"'"
 alias us='updatesystem'
 
-if command -v git >/dev/null 2>&1; then
-  alias gs='git status -sb'
-  alias ga='git add'
-  alias gb='git branch'
-  alias gc='git commit'
-  alias gcm='git commit -m'
-  alias gca='git commit -a'
-  alias gcam='git commit -am'
-  alias gco='git checkout'
-  alias gl='git log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --graph --date=relative'
-  alias gn='git clone'
-  alias gp='git push'
-  alias gu='git pull'
-  alias gi='git init'
-  alias gm='git merge'
-  alias gmt='git mergetool'
-  alias gd='git difftool'
-  alias gdf='git diff'
-  alias gdt='git diff-tree --no-commit-id --name-only -r'
-  alias grm='git rm'
-  alias gmv='git mv'
-  alias gst='git stash'
-  alias gr='git reset'
-  alias grh='git reset --hard'
-  alias gf='git fetch'
-  alias grb='git rebase'
-  alias grbi='git rebase -i'
-  alias grbc='git rebase --continue'
-  alias grba='git rebase --abort'
+alias gs='git status -sb'
+alias ga='git add'
+alias gb='git branch'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gca='git commit -a'
+alias gcam='git commit -am'
+alias gco='git checkout'
+alias gl='git log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --graph --date=relative'
+alias gn='git clone'
+alias gp='git push'
+alias gu='git pull'
+alias gi='git init'
+alias gm='git merge'
+alias gmt='git mergetool'
+alias gd='git difftool'
+alias gdf='git diff'
+alias gdt='git diff-tree --no-commit-id --name-only -r'
+alias grm='git rm'
+alias gmv='git mv'
+alias gst='git stash'
+alias gr='git reset'
+alias grh='git reset --hard'
+alias gf='git fetch'
+alias grb='git rebase'
+alias grbi='git rebase -i'
+alias grbc='git rebase --continue'
+alias grba='git rebase --abort'
 
-  if command -v hub >/dev/null 2>&1; then
-    alias git='hub'
-    alias ghpr='git pull-request'
-  fi
+alias git='hub'
+alias ghpr='git pull-request'
 
-  if command -v gittower >/dev/null 2>&1; then
-    alias tower='gittower'
-  fi
-fi
+alias tower='gittower'
 
-if command -v subl >/dev/null 2>&1; then
-  alias subl='subl -a'
-fi
+alias subl='subl -a'
 
-if command -v rougify >/dev/null 2>&1; then
-  alias c='rougify'
-fi
+alias c='rougify'
 
 # use brew findutils with their unprefixed names
-if command -v gfind >/dev/null 2>&1; then
-  alias find='gfind'
-fi
-if command -v glocate >/dev/null 2>&1; then
-  alias locate='glocate'
-fi
-if command -v gupdatedb >/dev/null 2>&1; then
-  alias updatedb='gupdatedb'
-fi
-if command -v gxargs >/dev/null 2>&1; then
-  alias xargs='gxargs'
-fi
-if command -v gsed >/dev/null 2>&1; then
-  alias sed='gsed'
-fi
+alias find='gfind'
+alias locate='glocate'
+alias updatedb='gupdatedb'
+alias xargs='gxargs'
+alias sed='gsed'

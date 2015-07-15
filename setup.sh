@@ -17,7 +17,7 @@ while getopts ":hl" opt; do
   esac
 done
 
-# backup existing files
+# back up existing files
 for i in $HOME/.aliases $HOME/.functions $HOME/.gemrc $HOME/.npmrc $HOME/.vimrc $HOME/.zshenv $HOME/.zshrc $HOME/.gitconfig $HOME/.lldbinit; do
   if [ -e $i ]; then
     mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"

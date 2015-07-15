@@ -1,0 +1,3 @@
+command script import /usr/local/opt/chisel/libexec/fblldb.py
+command alias uikit expr -l objc++ -O -- @import UIKit
+command alias foundation expr -l objc++ -O -- @import Foundation

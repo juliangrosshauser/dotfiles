@@ -35,12 +35,15 @@ ln -s $PWD/zshrc $HOME/.zshrc
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
   # backup existing file
-  if [ -e $HOME/.gitconfig ]; then
-    mv "$HOME/.gitconfig" "$HOME/.gitconfig.backup" || die "Could not move ~/.gitconfig to ~/.gitconfig.backup"
-    echo "~/.gitconfig has been renamed to ~/.gitconfig.backup"
-  fi
+  for i in $HOME/.gitconfig $HOME/.lldbinit; do
+    if [ -e $i ]; then
+      mv "${i}" "${i}.backup" || die "Could not move ${i} to ${i}.backup"
+      echo "${i} has been renamed to ${i}.backup"
+    fi
+  done
 
   ln -s $PWD/gitconfig $HOME/.gitconfig
+  ln -s $PWD/lldbinit $HOME/.lldbinit
 fi
 
 echo "Successfully linked dotfiles"

@@ -55,3 +55,4 @@ alias xargs='gxargs'
 alias sed='gsed'
 
 alias ln='gln'
+alias cp='gcp'

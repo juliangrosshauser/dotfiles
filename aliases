@@ -54,3 +54,5 @@ alias sed='gsed'
 
 alias ln='gln'
 alias cp='gcp'
+alias mv='gmv'
+alias rm='grm'

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+set -e
 LINK_ONLY=0
 
 while getopts ":hl" opt; do

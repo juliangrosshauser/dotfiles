@@ -59,3 +59,11 @@ function erasesimulators {
 
   rm $TMPFILE
 }
+
+function podreset {
+  rm -rfv ./*.xcworkspace
+  rm -rfv ./Pods
+  rm -rfv ./Podfile.lock
+  rm -rfv $HOME/Library/Caches/CocoaPods
+  pod install
+}

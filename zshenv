@@ -1,5 +1,8 @@
 export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
 
+# use GNU coreutils with their unprefixed names
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 

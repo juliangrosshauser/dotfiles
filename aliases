@@ -4,7 +4,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
-alias ls='gls --color'
+alias ls='ls --color'
 
 alias crlf-to-lf='sed '"'"'s/\r$//'"'"
 alias us='updatesystem'
@@ -51,9 +51,3 @@ alias locate='glocate'
 alias updatedb='gupdatedb'
 alias xargs='gxargs'
 alias sed='gsed'
-
-alias ln='gln'
-alias cp='gcp'
-alias mv='gmv'
-alias rm='grm'
-alias cat='gcat'

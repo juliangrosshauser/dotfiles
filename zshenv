@@ -25,4 +25,6 @@ export ANDROID_NDK_HOME='/usr/local/opt/android-ndk'
 export NVM_DIR=$HOME/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+export RUST_SRC_PATH=$HOME/dev/Rust/rust/src
+
 eval "$(rbenv init -)"

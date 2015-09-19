@@ -16,6 +16,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rizzatti/dash.vim'
 Plugin 'fatih/vim-go'
+Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 

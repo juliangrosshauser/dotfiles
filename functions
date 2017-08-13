@@ -19,8 +19,7 @@ function cpprogress() {
 
 function brewupdate() {
   echo -e "Updating brew\n"
-  brew update
-  brew upgrade --all
+  brew upgrade
 }
 
 function gemupdate() {

@@ -1,3 +1,6 @@
+# Fix the MANPATH not being set
+export MANPATH="$MANPATH"
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 

@@ -15,6 +15,10 @@ export PAGER='less'
 export CC=clang
 export CXX=clang++
 
+export CUDA_HOME=/usr/local/cuda
+export DYLD_LIBRARY_PATH="$CUDA_HOME/lib:$DYLD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$DYLD_LIBRARY_PATH"
+
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
 

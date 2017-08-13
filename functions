@@ -30,12 +30,6 @@ function gemupdate() {
   gem cleanup
 }
 
-function npmupdate() {
-  echo -e "Updating npm\n"
-  npm cache clean
-  npm install -g npm@latest
-}
-
 function updatesystem() {
   brewupdate
   echo ""

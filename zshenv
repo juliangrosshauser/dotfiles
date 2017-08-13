@@ -12,6 +12,9 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+export CC=clang
+export CXX=clang++
+
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:$GOPATH/bin
 

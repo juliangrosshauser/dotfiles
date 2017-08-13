@@ -65,7 +65,6 @@ let g:airline_powerline_fonts=1
 
 let g:syntastic_check_on_open=1
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
-let g:syntastic_go_checkers=['govet', 'golint']
 
 let g:racer_cmd = "$HOME/dev/Rust/racer/target/release/racer"
 

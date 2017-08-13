@@ -15,7 +15,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rizzatti/dash.vim'
-Plugin 'fatih/vim-go'
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
 

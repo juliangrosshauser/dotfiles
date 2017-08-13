@@ -19,9 +19,6 @@ export CUDA_HOME=/usr/local/cuda
 export DYLD_LIBRARY_PATH="$CUDA_HOME/lib:$DYLD_LIBRARY_PATH"
 export LD_LIBRARY_PATH="$DYLD_LIBRARY_PATH"
 
-export GOPATH=$HOME/dev/go
-export PATH=$PATH:$GOPATH/bin
-
 # java_home returns the path to a java home directory
 # specify java version with `java_home -v 1.x`, where
 # x is the desired java version

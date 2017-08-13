@@ -17,3 +17,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 
 source $HOME/.aliases
 source $HOME/.functions
+
+eval "$(rbenv init -)"

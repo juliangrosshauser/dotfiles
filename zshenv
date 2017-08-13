@@ -23,5 +23,3 @@ export LD_LIBRARY_PATH="$DYLD_LIBRARY_PATH"
 # specify java version with `java_home -v 1.x`, where
 # x is the desired java version
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-eval "$(rbenv init -)"

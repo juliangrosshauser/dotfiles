@@ -16,7 +16,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'rizzatti/dash.vim'
 Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
 
 call vundle#end()
 
@@ -64,8 +63,6 @@ let g:airline_powerline_fonts=1
 
 let g:syntastic_check_on_open=1
 let g:syntastic_ruby_checkers=['mri', 'rubocop']
-
-let g:racer_cmd = "$HOME/dev/Rust/racer/target/release/racer"
 
 " restore cursor position
 function! ResCur()

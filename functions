@@ -41,19 +41,3 @@ function updatesystem() {
   echo ""
   gemupdate
 }
-
-function erasesimulators {
-  killall "iOS Simulator"
-
-  OUTPUT="$(xcrun simctl list)"
-  TMPFILE=/tmp/simulator_erase_list.txt
-
-  echo $OUTPUT | awk -F "[()]" '{ for (i=2; i<NF; i+=2) print $i }' | grep '^[-A-Z0-9]*$' > $TMPFILE
-
-  for UUID in `awk '{ print $1 }' $TMPFILE`; do
-    xcrun simctl shutdown $UUID
-    xcrun simctl erase $UUID
-  done
-
-  rm $TMPFILE
-}

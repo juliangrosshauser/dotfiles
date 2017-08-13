@@ -1,16 +1,16 @@
-export PATH='/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # use GNU coreutils with their unprefixed names
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 # find GNU coreutils in man with their unprefixed names
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
-export EDITOR='vim'
-export VISUAL='vim'
-export PAGER='less'
+export EDITOR=vim
+export VISUAL=vim
+export PAGER=less
 
 export CC=clang
 export CXX=clang++

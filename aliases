@@ -56,3 +56,7 @@ alias xargs='gxargs'
 alias sed='gsed'
 
 alias dm='docker-machine'
+
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'

@@ -5,7 +5,7 @@ DISABLE_CORRECTION=true
 DISABLE_UPDATE_PROMPT=true
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 
-plugins=(zsh-syntax-highlighting)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions)
 
 source "$ZSH/oh-my-zsh.sh"
 

@@ -1,8 +1,7 @@
-# oh-my-zsh
 ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME=pure
 DISABLE_CORRECTION=true
-# auto update without asking
+# Auto update without asking
 DISABLE_UPDATE_PROMPT=true
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 

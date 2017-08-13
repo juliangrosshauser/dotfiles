@@ -5,9 +5,12 @@ DISABLE_CORRECTION=true
 DISABLE_UPDATE_PROMPT=true
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
 
-plugins=(zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions)
 
 source "$ZSH/oh-my-zsh.sh"
+
+# Reload completions
+autoload -U compinit && compinit
 
 # Use GNU coreutils with their unprefixed names
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

@@ -6,7 +6,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'chriskempson/base16-vim'
+Plugin 'dracula/vim'
 Plugin 'bling/vim-airline'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-surround'
@@ -58,11 +58,9 @@ set undolevels=2000
 
 syntax enable
 set background=dark
-let base16colorspace=256
-colorscheme base16-bright
+colorscheme dracula
 set guifont=Source\ Code\ Pro\ for\ Powerline:h11
 
-let g:airline_theme='base16'
 let g:airline_powerline_fonts=1
 
 let g:syntastic_check_on_open=1

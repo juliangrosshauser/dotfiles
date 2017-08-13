@@ -40,8 +40,6 @@ function updatesystem() {
   brewupdate
   echo ""
   gemupdate
-  echo ""
-  npmupdate
 }
 
 function erasesimulators {

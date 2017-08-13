@@ -10,6 +10,11 @@ plugins=(zsh-syntax-highlighting)
 
 source "$ZSH/oh-my-zsh.sh"
 
+# Use GNU coreutils with their unprefixed names
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# Find GNU coreutils in man with their unprefixed names
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 # set base16 colorscheme
 BASE16_SCHEME=bright
 BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"

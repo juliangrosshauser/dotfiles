@@ -19,5 +19,6 @@ export PATH="$CUDA_HOME/bin:$PATH"
 source "$HOME/.aliases"
 source "$HOME/.functions"
 
+source "$HOME/.asdf/asdf.sh"
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"

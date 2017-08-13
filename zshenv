@@ -27,4 +27,8 @@ source $(brew --prefix nvm)/nvm.sh
 
 export RUST_SRC_PATH=$HOME/dev/Rust/rust/src
 
+export LUA_PATH="$HOME/.luarocks/share/lua/5.1/?.lua;/Users/julian/.luarocks/share/lua/5.1/?/init.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;./?.lua;/usr/local/Cellar/luajit/2.1/share/luajit-2.1.0-beta1/?.lua;/usr/local/Cellar/luajit/2.1/share/lua/5.1/?.lua;/usr/local/Cellar/luajit/2.1/share/lua/5.1/?/init.lua"
+export LUA_CPATH="$HOME/.luarocks/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/?.so;./?.so;/usr/local/Cellar/luajit/2.1/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so"
+export PATH="$PATH:$HOME/.luarocks/bin"
+
 eval "$(rbenv init -)"

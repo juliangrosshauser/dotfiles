@@ -7,6 +7,7 @@ export PATH="$CUDA_HOME/bin:$PATH"
 
 fpath=("$HOME/.zfunctions" "$HOME/.zsh/zsh-completions/src" $fpath)
 
+# Use pure prompt
 autoload -U promptinit && promptinit
 prompt pure
 
@@ -24,6 +25,7 @@ zstyle ':completion:*' menu select
 # Skip the correction and immediately insert the first match
 setopt menu_complete
 
+# Set history options
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST="$HISTSIZE"
@@ -46,14 +48,17 @@ setopt hist_reduce_blanks
 source "$HOME/.aliases"
 source "$HOME/.functions"
 
+# Initialize version managers
 source "$HOME/.asdf/asdf.sh"
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 
+# Activate plugins
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh"
 
+# Configure keybindings
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 

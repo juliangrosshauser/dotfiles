@@ -53,3 +53,19 @@ eval "$(rbenv init -)"
 source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh"
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# Go back a word with ⌥←
+bindkey '^[^[[D' backward-word
+# Go forward a word with ⌥→
+bindkey '^[^[[C' forward-word
+# Go to beginning of line with ⌘←
+# iTerm needs to be configured to send the
+# escape sequence "beginning" with the key combination
+bindkey '^[beginning' beginning-of-line
+# Go to end of line with ⌘→
+# iTerm needs to be configured to send the
+# escape sequence "end" with the key combination
+bindkey '^[end' end-of-line

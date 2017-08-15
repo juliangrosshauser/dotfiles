@@ -38,16 +38,16 @@
     changed = green
     untracked = cyan
 [difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
-  prompt = false
+    prompt = false
 [diff]
-  tool = Kaleidoscope
+    tool = Kaleidoscope
 [mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool]
-  keepBackup = false
-  prompt = false
+    keepBackup = false
+    prompt = false
 [merge]
     tool = Kaleidoscope
 [hub]

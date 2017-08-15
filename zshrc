@@ -5,6 +5,8 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export PATH="$CUDA_HOME/bin:$PATH"
 
+source "$HOME/.localrc"
+
 fpath=("$HOME/.zfunctions" "$HOME/.zsh/zsh-completions/src" $fpath)
 
 # Use pure prompt

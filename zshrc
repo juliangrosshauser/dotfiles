@@ -5,7 +5,7 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export PATH="$CUDA_HOME/bin:$PATH"
 
-fpath=("$HOME/.zfunctions" $fpath)
+fpath=("$HOME/.zfunctions" "$HOME/.zsh/zsh-completions/src" $fpath)
 
 autoload -U promptinit && promptinit
 prompt pure
@@ -49,3 +49,7 @@ source "$HOME/.functions"
 source "$HOME/.asdf/asdf.sh"
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
+
+source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh"

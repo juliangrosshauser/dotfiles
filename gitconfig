@@ -43,6 +43,7 @@
     prompt = false
 [diff]
     tool = Kaleidoscope
+    compactionHeuristic = true
 [mergetool "Kaleidoscope"]
     cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
 [mergetool]

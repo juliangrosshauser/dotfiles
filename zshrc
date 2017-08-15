@@ -5,6 +5,11 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export PATH="$CUDA_HOME/bin:$PATH"
 
+fpath=("$HOME/.zfunctions" $fpath)
+
+autoload -U promptinit && promptinit
+prompt pure
+
 source "$HOME/.aliases"
 source "$HOME/.functions"
 

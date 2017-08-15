@@ -46,7 +46,10 @@ setopt share_history
 setopt hist_reduce_blanks
 
 source "$HOME/.aliases"
-source "$HOME/.functions"
+
+for function in ~/.functions/*.sh; do
+  source "$function"
+done
 
 # Initialize version managers
 source "$HOME/.asdf/asdf.sh"

@@ -1,8 +1,3 @@
-# Create a new directory and enter it
-function mkd() {
-  mkdir -p "$@" && cd "$@"
-}
-
 # Start an HTTP server from a directory, optionally specifying the port
 function server() {
   local port="${1:-8000}"
@@ -10,27 +5,4 @@ function server() {
   # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
   # and serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
   python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-}
-
-# Copy with progress
-function cpprogress() {
-  rsync -WavP --human-readable --progress $1 $2
-}
-
-function brewupdate() {
-  echo -e "Updating brew\n"
-  brew upgrade
-}
-
-function gemupdate() {
-  echo -e "Updating gem\n"
-  gem update --system
-  gem update
-  gem cleanup
-}
-
-function updatesystem() {
-  brewupdate
-  echo ""
-  gemupdate
 }

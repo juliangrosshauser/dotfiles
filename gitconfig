@@ -8,7 +8,7 @@
     autocrlf = input
     safecrlf = false
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    # make rebase save on os x
+    # Make rebase save on macOS
     trustctime = false
 [help]
     format = web

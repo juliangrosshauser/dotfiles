@@ -1,6 +1,7 @@
 [user]
     name = Julian Grosshauser
     email = julian@juliangrosshauser.com
+    signingkey = 0A89880268262E52
 [credential]
     helper = osxkeychain
 [core]
@@ -57,3 +58,7 @@
 	required = true
 	clean = git media clean %f
 	smudge = git media smudge %f
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg

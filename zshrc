@@ -3,8 +3,6 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 # Find GNU coreutils in man with their unprefixed names
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export PATH="$CUDA_HOME/bin:$PATH"
-
 source "$HOME/.localrc"
 
 fpath=("$HOME/.zfunctions" /usr/local/share/zsh-completions $fpath)

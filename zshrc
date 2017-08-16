@@ -7,7 +7,7 @@ export PATH="$CUDA_HOME/bin:$PATH"
 
 source "$HOME/.localrc"
 
-fpath=("$HOME/.zfunctions" "$HOME/.zsh/zsh-completions/src" $fpath)
+fpath=("$HOME/.zfunctions" /usr/local/share/zsh-completions $fpath)
 
 # Use pure prompt
 autoload -U promptinit && promptinit
@@ -59,9 +59,9 @@ eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 
 # Activate plugins
-source "$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh"
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Configure keybindings
 bindkey '^[[A' history-substring-search-up

@@ -1,23 +1,4 @@
 set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'dracula/vim'
-Plugin 'bling/vim-airline'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rizzatti/dash.vim'
-
-call vundle#end()
-
 filetype plugin indent on
 set encoding=utf-8
 set mouse=a
@@ -56,14 +37,9 @@ set undolevels=2000
 syntax enable
 set background=dark
 colorscheme dracula
-set guifont=Source\ Code\ Pro\ for\ Powerline:h11
+set guifont=Source\ Code\ Pro:h11
 
-let g:airline_powerline_fonts=1
-
-let g:syntastic_check_on_open=1
-let g:syntastic_ruby_checkers=['mri', 'rubocop']
-
-" restore cursor position
+" Restore cursor position
 function! ResCur()
   if line("'\"") <= line("$")
     normal! g`"
@@ -76,13 +52,13 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" remap leader to comma
+" Remap leader to comma
 let mapleader=","
 
-" remap ; to :
+" Remap ; to :
 nnoremap ; :
 
-" use jk/kj as <esc>
+" Use jk/kj as <esc>
 inoremap jk <esc>
 inoremap kj <esc>
 cnoremap jk <esc>
@@ -90,40 +66,36 @@ cnoremap kj <esc>
 vnoremap ii <esc>
 vnoremap ii <esc>
 
-" reselect visual block after indent/outdent
+" Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
 
-" improve up/down movement on wrapped lines
+" Improve up/down movement on wrapped lines
 nnoremap j gj
 nnoremap k gk
 
-" clear search highlights
+" Clear search highlights
 noremap <silent><leader>/ :nohls<cr>
 
-" use sane regexes
+" Use sane regexes
 nnoremap / /\v
 vnoremap / /\v
 
-" force savin files that require root permission
+" Force saving files that require root permission
 cmap w!! %!sudo tee > /dev/null %
 
-" remove trailing whitespace on save
+" Remove trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" insert newline after current line without entering insert mode by pressing enter
+" Insert newline after current line without entering insert mode by pressing
+" enter
 nmap <cr> o<esc>
-" insert newline before current line without entering insert mode by pressing
+" Insert newline before current line without entering insert mode by pressing
 " shift and enter
 nmap <s-enter> O<esc>
 
-" open ~/.vimrc
+" Open ~/.vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
 
-" source ~/.vimrc
+" Source ~/.vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)

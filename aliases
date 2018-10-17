@@ -64,6 +64,7 @@ alias rgv='gem --version'
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
+alias bv='bundle --version'
 
 alias rg='rbenv gemset'
 alias rga='rbenv gemset active'

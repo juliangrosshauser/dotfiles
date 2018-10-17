@@ -57,6 +57,10 @@ alias sed='gsed'
 
 alias dm='docker-machine'
 
+alias rgu='gem update'
+alias rgus='gem update --system'
+alias rgv='gem --version'
+
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'

@@ -71,3 +71,6 @@ alias rga='rbenv gemset active'
 alias rgi='rbenv gemset init'
 alias rgd='rbenv gemset delete'
 alias rgl='rbenv gemset list'
+
+alias rl='remove-line'
+alias rls='remove-line-ssh'

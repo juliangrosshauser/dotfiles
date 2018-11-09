@@ -1,4 +1,4 @@
-function updatesystem() {
+updatesystem() {
   brewupdate
   echo ""
   gemupdate

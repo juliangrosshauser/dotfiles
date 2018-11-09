@@ -1,4 +1,4 @@
-function gemupdate() {
+gemupdate() {
   echo -e "Updating gem\n"
   gem update --system
   gem update

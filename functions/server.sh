@@ -1,5 +1,5 @@
 # Start an HTTP server from a directory, optionally specifying the port
-function server() {
+server() {
   local port="${1:-8000}"
   open "http://localhost:${port}/"
   # Set the default Content-Type to `text/plain` instead of `application/octet-stream`

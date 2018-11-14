@@ -53,8 +53,6 @@ done
 
 # Initialize version managers
 source "$HOME/.asdf/asdf.sh"
-eval "$(pyenv init -)"
-eval "$(rbenv init -)"
 
 # Activate plugins
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

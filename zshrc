@@ -53,6 +53,7 @@ done
 
 # Initialize version managers
 source "$HOME/.asdf/asdf.sh"
+source "$HOME/.asdf/completions/asdf.bash"
 
 # Activate plugins
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

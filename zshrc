@@ -51,7 +51,7 @@ for function in ~/.functions/*.sh; do
   source "$function"
 done
 
-# Initialize version managers
+# Initialize asdf version manager
 source "$HOME/.asdf/asdf.sh"
 source "$HOME/.asdf/completions/asdf.bash"
 

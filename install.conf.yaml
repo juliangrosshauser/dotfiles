@@ -1,0 +1,17 @@
+- clean: ['~']
+
+- link:
+    ~/.zshrc:
+    ~/.zshenv:
+    ~/.aliases:
+    ~/.expand-aliases:
+    ~/.gitconfig:
+    ~/.asdfrc:
+    ~/.default-gems:
+    ~/.gemrc:
+    ~/.npmrc:
+    ~/.condarc:
+    ~/.vimrc:
+    ~/.tmux.conf:
+    ~/.lldbinit:
+      if: '[ $(uname) = Darwin ]'

@@ -1,0 +1,6 @@
+not-expanding-alias subl='subl -a'
+
+alias tower='gittower'
+alias t='gittower'
+
+not-expanding-alias idea='open -a "IntelliJ IDEA"'

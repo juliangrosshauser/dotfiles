@@ -1,0 +1,20 @@
+alias sudo='sudo '
+
+not-expanding-alias rm='rm -i'
+not-expanding-alias cp='cp -i'
+not-expanding-alias mv='mv -i'
+not-expanding-alias mkdir='mkdir -p'
+not-expanding-alias ls='ls --color'
+alias l='ls -l'
+
+not-expanding-alias crlf-to-lf='sed '"'"'s/\r$//'"'"
+
+alias rl='remove-line'
+alias rls='remove-line-ssh'
+
+alias s='ssh'
+alias c='connect'
+
+not-expanding-alias icloud='cd "$HOME/Library/Mobile Documents/com~apple~CloudDocs"'
+
+not-expanding-alias ngrok='$HOME/dev/ngrok/ngrok'

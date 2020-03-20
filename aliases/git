@@ -1,14 +1,3 @@
-alias sudo='sudo '
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias mkdir='mkdir -p'
-alias ls='ls --color'
-
-alias crlf-to-lf='sed '"'"'s/\r$//'"'"
-alias us='updatesystem'
-
 alias gs='git status -sb'
 alias ga='git add'
 alias gb='git branch'
@@ -39,38 +28,5 @@ alias grbi='git rebase -i'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
 
-alias git='hub'
+not-expanding-alias git='hub'
 alias ghpr='git pull-request'
-
-alias tower='gittower'
-
-alias subl='subl -a'
-
-alias c='rougify'
-
-# use brew findutils with their unprefixed names
-alias find='gfind'
-alias locate='glocate'
-alias updatedb='gupdatedb'
-alias xargs='gxargs'
-alias sed='gsed'
-
-alias dm='docker-machine'
-
-alias rgu='gem update'
-alias rgus='gem update --system'
-alias rgv='gem --version'
-
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
-alias bv='bundle --version'
-
-alias rg='rbenv gemset'
-alias rga='rbenv gemset active'
-alias rgi='rbenv gemset init'
-alias rgd='rbenv gemset delete'
-alias rgl='rbenv gemset list'
-
-alias rl='remove-line'
-alias rls='remove-line-ssh'

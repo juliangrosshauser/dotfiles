@@ -1,0 +1,38 @@
+# Credits:
+#
+# https://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
+# http://www.math.cmu.edu/~gautam/sj/blog/20140625-zsh-expand-alias.html
+# https://github.com/jarmo/expand-aliases-oh-my-zsh/blob/master/expand-aliases.plugin.zsh
+# https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/globalias/globalias.plugin.zsh
+
+typeset -a not_expanding_aliases
+
+# This function needs to be used instead of `alias` to prevent the expansion
+# of the alias.
+not-expanding-alias() {
+  alias $1
+  # `%%` removes the longest match at the end of the string
+  # (`%` would remove the shortest match). This means everything after the
+  # `=` gets removed and only the alias itself gets added to the array.
+  not_expanding_aliases+=(${1%%\=*})
+}
+
+expand-aliases() {
+  # `(j:|:)` joins the elements of the array and separates them with the
+  # character between the colons, in this case `|`. The whole statement
+  # converts the array to a regular expression of the form
+  # `(element1|element2|element3)$`. This means that we only expand the current
+  # command in the shell (`$LBUFFER` is everything left of the cursor) if it
+  # doesn't match one of the commands in the `not_expanding_aliases` array.
+  if ! [[ $LBUFFER =~ (${(j:|:)not_expanding_aliases})\$ ]]; then
+    zle _expand_alias
+    zle expand-word
+  fi
+  
+  zle magic-space
+}
+
+zle -N expand-aliases
+
+bindkey ' ' expand-aliases # space to expand command
+bindkey '^ ' magic-space # control-space to bypass expansion

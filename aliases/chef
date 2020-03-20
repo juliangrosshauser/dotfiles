@@ -1,0 +1,6 @@
+alias kc='bundle exec kitchen create'
+alias kd='bundle exec kitchen destroy'
+alias ko='bundle exec kitchen converge'
+alias kv='bundle exec kitchen verify'
+alias kx='bundle exec kitchen login'
+alias kl='bundle exec kitchen list'

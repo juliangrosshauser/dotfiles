@@ -1,0 +1,16 @@
+alias d='docker'
+alias db='docker build'
+alias dr='docker run'
+alias di='docker image'
+alias dil='docker image ls'
+alias dc='docker container'
+alias dcl='docker container ls'
+
+alias dcmp='docker-compose'
+alias dcmpu='docker-compose up'
+alias dcmpd='docker-compose down'
+alias dcmpb='docker-compose build'
+alias dcmpr='docker-compose run'
+alias dcmpl='docker-compose logs'
+
+alias dm='docker-machine'

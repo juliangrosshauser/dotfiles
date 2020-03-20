@@ -1,0 +1,1 @@
+not-expanding-alias was='aws --endpoint-url=$WASABI_ENDPOINT_URL'

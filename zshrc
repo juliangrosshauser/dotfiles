@@ -35,7 +35,7 @@ zstyle ':completion:*' matcher-list '' \
 zstyle ':completion:*' menu select
 
 # Skip the correction and immediately insert the first match
-setopt menu_complete
+# setopt menu_complete
 
 # Set history options
 HISTFILE="$HOME/.zsh_history"

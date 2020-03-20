@@ -1,7 +1,7 @@
-# Use GNU coreutils with their unprefixed names
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-# Find GNU coreutils in man with their unprefixed names
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+# Use GNU coreutils, find, sed and grep with their unprefixed names
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/findutils/libexec/gnubin:/usr/local/opt/gnu-sed/libexec/gnubin:/usr/local/opt/grep/libexec/gnubin:$PATH"
+# Find GNU coreutils, find, sed and grep in man with their unprefixed names
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/findutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/grep/libexec/gnuman:$MANPATH"
 
 source "$HOME/.localrc"
 

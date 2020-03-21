@@ -5,7 +5,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/findutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/grep/libexec/gnuman:$MANPATH"
 fi
 
-source "$HOME/.localrc"
+if [ -f "$HOME/.localrc" ]; then
+  source "$HOME/.localrc"
+fi
 
 fpath=("$HOME/.zfunctions" /usr/local/share/zsh-completions $fpath)
 
@@ -69,9 +71,11 @@ for function in ~/.functions/*.sh; do
   source "$function"
 done
 
-# Initialize asdf version manager
-source "$HOME/.asdf/asdf.sh"
-source "$HOME/.asdf/completions/asdf.bash"
+if [ -d "$HOME/.asdf" ]; then
+  # Initialize asdf version manager
+  source "$HOME/.asdf/asdf.sh"
+  source "$HOME/.asdf/completions/asdf.bash"
+fi
 
 # Activate plugins
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -82,15 +86,17 @@ source /usr/local/share/zsh-history-substring-search/zsh-history-substring-searc
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Go back a word with ⌥←
-bindkey '^[^[[D' backward-word
-# Go forward a word with ⌥→
-bindkey '^[^[[C' forward-word
-# Go to beginning of line with ⌘←
-# iTerm needs to be configured to send the
-# escape sequence "beginning" with the key combination
-bindkey '^[beginning' beginning-of-line
-# Go to end of line with ⌘→
-# iTerm needs to be configured to send the
-# escape sequence "end" with the key combination
-bindkey '^[end' end-of-line
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # Go back a word with ⌥←
+  bindkey '^[^[[D' backward-word
+  # Go forward a word with ⌥→
+  bindkey '^[^[[C' forward-word
+  # Go to beginning of line with ⌘←
+  # iTerm needs to be configured to send the
+  # escape sequence "beginning" with the key combination
+  bindkey '^[beginning' beginning-of-line
+  # Go to end of line with ⌘→
+  # iTerm needs to be configured to send the
+  # escape sequence "end" with the key combination
+  bindkey '^[end' end-of-line
+fi

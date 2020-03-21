@@ -1,5 +1,7 @@
-# Fix the MANPATH not being set
-export MANPATH="$MANPATH"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Fix the MANPATH not being set
+    export MANPATH="$MANPATH"
+fi
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -11,7 +13,9 @@ export PAGER=less
 export CC=clang
 export CXX=clang++
 
-# java_home returns the path to a java home directory
-# specify java version with `java_home -v 1.x`, where
-# x is the desired java version
-export JAVA_HOME="$(/usr/libexec/java_home)"
+if [ -f /usr/libexec/java_home ]; then
+    # java_home returns the path to a java home directory
+    # specify java version with `java_home -v 1.x`, where
+    # x is the desired java version
+    export JAVA_HOME="$(/usr/libexec/java_home)"
+fi

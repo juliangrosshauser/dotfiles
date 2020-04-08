@@ -1,6 +1,7 @@
 - clean: ['~']
 
 - link:
+    ~/.zsh:
     ~/.zshrc:
     ~/.zshenv:
     ~/.aliases:
@@ -32,3 +33,6 @@
 - link:
     ~/.gitconfig-os-specific: gitconfig-macos
     ~/.lldbinit:
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

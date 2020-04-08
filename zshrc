@@ -9,10 +9,10 @@ if [ -f "$HOME/.localrc" ]; then
   source "$HOME/.localrc"
 fi
 
-fpath=("$HOME/.zfunctions" /usr/local/share/zsh-completions $fpath)
+fpath=("$HOME/.zsh/prompts/pure" "$HOME/.zsh/plugins/zsh-completions/src" $fpath)
 
 # Use pure prompt
-autoload -U promptinit && promptinit
+autoload -U promptinit; promptinit
 prompt pure
 
 # Reload completions
@@ -78,9 +78,9 @@ if [ -d "$HOME/.asdf" ]; then
 fi
 
 # Activate plugins
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
 
 # Configure keybindings
 bindkey '^[[A' history-substring-search-up

@@ -2,63 +2,58 @@
     name = Julian Grosshauser
     email = julian@juliangrosshauser.com
     signingkey = 0A89880268262E52
-[credential]
-    helper = osxkeychain
+
 [core]
     editor = vim
     autocrlf = input
     safecrlf = false
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    # Make rebase save on macOS
-    trustctime = false
+
 [help]
     format = web
     autocorrect = 1
+
 [alias]
     ls = ls-files
     ign = ls-files -o -i --exclude-standard
+
 [branch]
     autosetupmerge = true
 	autosetuprebase = always
+
 [push]
     default = simple
+
+[commit]
+    gpgsign = true
+
+[gpg]
+    program = gpg
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+
 [color]
     ui = true
+
 [color "branch"]
     current = white
     local = blue
     remote = green
+
 [color "diff"]
     meta = yellow bold
     frag = magenta bold
     old = red bold
     new = green bold
     whitespace = red reverse
+
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[difftool]
-    prompt = false
-[diff]
-    tool = Kaleidoscope
-    compactionHeuristic = true
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
-[mergetool]
-    keepBackup = false
-    prompt = false
-[merge]
-    tool = Kaleidoscope
-[hub]
-	protocol = https
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-[commit]
-    gpgsign = true
-[gpg]
-    program = gpg
+
+[include]
+	path = ~/.gitconfig-os-specific

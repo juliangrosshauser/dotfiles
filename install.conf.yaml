@@ -5,7 +5,7 @@
     ~/.zshenv:
     ~/.aliases:
     ~/.expand-aliases:
-    ~/.gitconfig:
+    ~/.gitconfig: gitconfig-common
     ~/.asdfrc:
     ~/.default-gems:
     ~/.gemrc:
@@ -13,5 +13,22 @@
     ~/.condarc:
     ~/.vimrc:
     ~/.tmux.conf:
-    ~/.lldbinit:
+
+# WSL
+
+- defaults:
+    link:
+      if: '[[ $(uname -r) == *"microsoft"* ]]'
+
+- link:
+    ~/.gitconfig-os-specific: gitconfig-wsl
+
+# macOS
+
+- defaults:
+    link:
       if: '[ $(uname) = Darwin ]'
+
+- link:
+    ~/.gitconfig-os-specific: gitconfig-macos
+    ~/.lldbinit:

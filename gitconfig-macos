@@ -1,0 +1,29 @@
+[core]
+    # Make rebase save on macOS
+    trustctime = false
+
+[credential]
+    helper = osxkeychain
+
+[difftool "Kaleidoscope"]
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+    prompt = false
+
+[diff]
+    tool = Kaleidoscope
+    compactionHeuristic = true
+
+[mergetool "Kaleidoscope"]
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool]
+    keepBackup = false
+    prompt = false
+
+[merge]
+    tool = Kaleidoscope
+
+[hub]
+	protocol = https

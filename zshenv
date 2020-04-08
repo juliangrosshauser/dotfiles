@@ -1,6 +1,9 @@
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Fix the MANPATH not being set
     export MANPATH="$MANPATH"
+
+    export CC=clang
+    export CXX=clang++
 fi
 
 export LC_ALL=en_US.UTF-8
@@ -9,9 +12,6 @@ export LANG=en_US.UTF-8
 export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
-
-export CC=clang
-export CXX=clang++
 
 if [ -f /usr/libexec/java_home ]; then
     # java_home returns the path to a java home directory

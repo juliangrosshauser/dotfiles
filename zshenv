@@ -19,3 +19,8 @@ if [ -f /usr/libexec/java_home ]; then
     # x is the desired java version
     export JAVA_HOME="$(/usr/libexec/java_home)"
 fi
+
+if [[ "$OSTYPE" == "linux"* ]]; then
+    # Enable passphrase prompt for gpg
+    export GPG_TTY=$(tty)
+fi

@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "zshrc": "shellscript",
+    "zshenv": "shellscript",
+    "expand-aliases": "shellscript",
+    "**/aliases/*": "shellscript",
+    "gitconfig-*": "properties",
+    "vimrc": "viml"
+  }
+}

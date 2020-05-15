@@ -9,6 +9,12 @@ if [ -f "$HOME/.localrc" ]; then
   source "$HOME/.localrc"
 fi
 
+if [ -d "$HOME/.asdf" ]; then
+  # Initialize asdf version manager
+  source "$HOME/.asdf/asdf.sh"
+  fpath=("$ASDF_DIR/completions" $fpath)
+fi
+
 fpath=("$HOME/.zsh/prompts/pure" "$HOME/.zsh/plugins/zsh-completions/src" $fpath)
 
 # Use pure prompt
@@ -70,12 +76,6 @@ done
 for function in ~/.functions/*.sh; do
   source "$function"
 done
-
-if [ -d "$HOME/.asdf" ]; then
-  # Initialize asdf version manager
-  source "$HOME/.asdf/asdf.sh"
-  source "$HOME/.asdf/completions/asdf.bash"
-fi
 
 # Activate plugins
 source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"

@@ -26,13 +26,12 @@ expand-aliases() {
   # doesn't match one of the commands in the `not_expanding_aliases` array.
   if ! [[ $LBUFFER =~ (${(j:|:)not_expanding_aliases})\$ ]]; then
     zle _expand_alias
-    zle expand-word
   fi
-  
+
   zle magic-space
 }
 
 zle -N expand-aliases
 
-bindkey ' ' expand-aliases # space to expand command
+bindkey ' ' expand-aliases # space to expand aliases
 bindkey '^ ' magic-space # control-space to bypass expansion

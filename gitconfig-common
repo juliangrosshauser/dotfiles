@@ -36,11 +36,6 @@
 [gpg]
     program = gpg
 
-[filter "media"]
-	required = true
-	clean = git media clean %f
-	smudge = git media smudge %f
-
 [color]
     ui = true
 
@@ -69,3 +64,8 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f

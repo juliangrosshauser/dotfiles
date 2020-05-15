@@ -87,9 +87,6 @@ source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-se
 # * Multiple key sequences can be bound to the same command by simply adding another `bindkey` line with the same command but a different key sequence.
 # * Table of keyboard shortcuts: https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Go back a word with ⌥←
   bindkey '^[^[[D' backward-word
@@ -104,6 +101,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # iTerm needs to be configured to send the
   # escape sequence "end" with the key combination
   bindkey '^[end' end-of-line
+
+  # See: https://github.com/zsh-users/zsh-history-substring-search#usage
+  # Up arrow key ↑
+  bindkey '^[[A' history-substring-search-up
+  # Down arrow key ↓
+  bindkey '^[[B' history-substring-search-down
 fi
 
 if [[ $(uname -r) == *"microsoft"* ]]; then
@@ -124,6 +127,12 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
   bindkey '^H' backward-delete-word
   # Delete word after cursor with Ctrl+Delete
   bindkey '^[[3;5~' delete-word
+
+  # See: https://github.com/zsh-users/zsh-history-substring-search#usage
+  # Up arrow key ↑
+  bindkey "$terminfo[kcuu1]" history-substring-search-up
+  # Down arrow key ↓
+  bindkey "$terminfo[kcud1]" history-substring-search-down
 fi
 
 if [[ $(uname -r) == *"microsoft"* ]]; then

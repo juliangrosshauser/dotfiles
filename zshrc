@@ -100,3 +100,23 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # escape sequence "end" with the key combination
   bindkey '^[end' end-of-line
 fi
+
+if [[ $(uname -r) == *"microsoft"* ]]; then
+  # The following keybindings work in Windows Terminal.
+
+  # Found here: https://github.com/microsoft/terminal/issues/755#issuecomment-530905894
+  # Go back a word with Ctrl+←
+  bindkey '^[[1;5D' backward-word
+  # Go forward a word with Ctrl+→
+  bindkey '^[[1;5C' forward-word
+
+  # Go to beginning of line with Fn+←
+  bindkey '^[[H' beginning-of-line
+  # Go to beginning of line with Fn+→
+  bindkey '^[[F' end-of-line
+
+  # Delete word before cursor with Ctrl+Backspace
+  bindkey '^H' backward-delete-word
+  # Delete word after cursor with Ctrl+Delete
+  bindkey '^[[3;5~' delete-word
+fi

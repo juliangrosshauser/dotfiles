@@ -36,6 +36,9 @@ set undolevels=2000
 
 syntax enable
 set background=dark
+" Fix background in Windows Terminal. `set termguicolors` doesn't fix it completely. See: https://github.com/dracula/vim/issues/164
+let g:dracula_colorterm = 0
+packadd! dracula
 colorscheme dracula
 set guifont=Hasklig:h11
 

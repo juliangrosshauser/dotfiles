@@ -13,6 +13,7 @@
     ~/.gemrc:
     ~/.npmrc:
     ~/.condarc:
+    ~/.vim:
     ~/.vimrc:
     ~/.tmux.conf:
 

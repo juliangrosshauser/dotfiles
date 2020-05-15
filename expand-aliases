@@ -28,7 +28,9 @@ expand-aliases() {
     zle _expand_alias
   fi
 
-  zle magic-space
+  # Add character of key that was bound to this widget, e.g. adds space if space was pressed, `^M` if enter was pressed.
+  # See: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Modifying-Text
+  zle self-insert
 }
 
 zle -N expand-aliases

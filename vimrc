@@ -37,7 +37,7 @@ set undolevels=2000
 syntax enable
 set background=dark
 colorscheme dracula
-set guifont=Source\ Code\ Pro:h11
+set guifont=Hasklig:h11
 
 " Restore cursor position
 function! ResCur()

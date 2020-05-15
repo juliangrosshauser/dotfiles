@@ -99,6 +99,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   bindkey '^[^[[D' backward-word
   # Go forward a word with ⌥→
   bindkey '^[^[[C' forward-word
+
   # Go to beginning of line with ⌘←
   # iTerm needs to be configured to send the
   # escape sequence "beginning" with the key combination

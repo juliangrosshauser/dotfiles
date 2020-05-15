@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+script_path="${BASH_SOURCE[0]}"
+script_basename=$(basename "$script_path")
+script_directory="$(cd "$(dirname "$script_path")" >/dev/null && pwd)"
+source "$script_directory/helper/handle-help-option"
+
+help_message=$(cat <<-HELP
+Usage: $script_basename [BUCKET] [FOLDER]
+Add FOLDER to AWS S3 BUCKET.
+HELP
+)
+
+handle-help-option "$help_message" "$@"
+
+aws s3api put-object --bucket "$1" --key "$2/"

@@ -6,6 +6,7 @@
     ~/.zshenv:
     ~/.aliases:
     ~/.expand-aliases:
+    ~/.bin:
     ~/.gitconfig: gitconfig-common
     ~/.asdfrc:
     ~/.default-gems:

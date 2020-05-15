@@ -73,10 +73,6 @@ for alias_file in ~/.aliases/*; do
   source "$alias_file"
 done
 
-for function in ~/.functions/*.sh; do
-  source "$function"
-done
-
 # Activate plugins
 source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -144,3 +140,5 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
   # Force OpenGL rendering to happen in X server on Windows, i.e. use GPU on Windows (currently WSL can't use the GPU).
   export LIBGL_ALWAYS_INDIRECT=1
 fi
+
+export PATH="$HOME/.bin:$PATH"

@@ -1,0 +1,17 @@
+handle-help-option() {
+  help_message="$1"
+  shift
+
+  while (( "$#" )); do
+    option="$1"
+
+    case "$option" in
+    -h|--h|--help|help)
+      echo "$help_message"
+      exit 0
+      ;;
+    esac
+    
+    shift
+  done
+}

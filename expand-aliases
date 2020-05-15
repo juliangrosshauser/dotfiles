@@ -28,12 +28,24 @@ expand-aliases() {
     zle _expand_alias
   fi
 
-  # Add character of key that was bound to this widget, e.g. adds space if space was pressed, `^M` if enter was pressed.
-  # See: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Modifying-Text
-  zle self-insert
+  # If we expand aliases right before command execution we don't need to add any additonal characters.
+  if [ "$1" != 'without-self-insert' ]; then
+    # Add character of key that was bound to this widget, e.g. adds space if space was pressed, `^M` if enter was pressed.
+    # See: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Modifying-Text
+    zle self-insert
+  fi
+}
+
+expand-aliases-and-accept-line() {
+  # Pass `without-self-insert` to prevent adding `^M` to the end of the command.
+  zle expand-aliases 'without-self-insert'
+  # Execute command. See: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Miscellaneous
+  zle accept-line
 }
 
 zle -N expand-aliases
+zle -N expand-aliases-and-accept-line
 
 bindkey ' ' expand-aliases # space to expand aliases
 bindkey '^ ' magic-space # control-space to bypass expansion
+bindkey '^M' expand-aliases-and-accept-line # enter to expand aliases before executing command

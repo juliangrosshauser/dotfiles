@@ -78,6 +78,13 @@ source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
 
+# The first time running `expand-aliases-and-accept-line` on the same command that was just executed right before, the expanded command
+# will include the autosuggestions of the previously executed command, e.g. running `git branch -a` followed by `gb`.
+# The `gb` command is an alias for `git branch` and will be expanded, but it will also include the `-a` argument from the previous command.
+# To prevent this from happening we add `expand-aliases-and-accept-line` to the array of widgets that do not trigger any custom behavior of
+# the zsh-autosuggestions plugin. See: https://github.com/zsh-users/zsh-autosuggestions#widget-mapping
+ZSH_AUTOSUGGEST_IGNORE_WIDGETS+=(expand-aliases-and-accept-line)
+
 # Configure keybindings
 
 # Helpful information for keybindings:

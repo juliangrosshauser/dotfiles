@@ -138,4 +138,9 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
     rm -f "$SSH_AUTH_SOCK"
     ( setsid socat UNIX-LISTEN:"$SSH_AUTH_SOCK",fork EXEC:"$HOME/winhome/WSL/npiperelay.exe -ei -s //./pipe/openssh-ssh-agent",nofork & ) >/dev/null 2>&1
   fi
+
+  # Use X server running on Windows. See https://wiki.ubuntu.com/WSL and https://x410.dev/cookbook/wsl/using-x410-with-wsl2.
+  test -z "$DISPLAY" && export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
+  # Force OpenGL rendering to happen in X server on Windows, i.e. use GPU on Windows (currently WSL can't use the GPU).
+  export LIBGL_ALWAYS_INDIRECT=1
 fi

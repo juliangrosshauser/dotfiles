@@ -22,7 +22,7 @@
 	autosetuprebase = always
 
 [push]
-    default = simple
+    default = current
 
 [commit]
     gpgsign = true

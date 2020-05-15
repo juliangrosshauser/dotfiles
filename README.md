@@ -8,4 +8,4 @@ Run `./install` to set up the dotfiles automatically.
 
 ## License
 
-MIT
+[MIT](LICENSE)

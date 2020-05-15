@@ -13,6 +13,18 @@ export EDITOR=vim
 export VISUAL=vim
 export PAGER=less
 
+if [ -d /usr/local/go/bin ]; then
+    export PATH="/usr/local/go/bin:$PATH"
+fi
+
+if [ -d "$HOME/dev/go" ]; then
+    export GOPATH="$HOME/dev/go"
+fi
+
+if [ -n "$GOPATH" ]; then
+    export PATH="$GOPATH/bin:$PATH"
+fi
+
 if [ -f /usr/libexec/java_home ]; then
     # java_home returns the path to a java home directory
     # specify java version with `java_home -v 1.x`, where

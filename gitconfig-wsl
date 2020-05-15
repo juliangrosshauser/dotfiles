@@ -1,4 +1,25 @@
 [credential]
-		helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
+    helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
     # Enter credentials in modal dialog instead of command line. See: https://github.com/microsoft/Git-Credential-Manager-for-Windows/blob/master/Docs/Faq.md#q-why-does-my-gui-freeze-when-i-push-pull-or-fetch
     modalprompt = true
+
+[diff]
+    tool = Visual Studio Code
+
+[difftool]
+    # Don't ask if difftool should be opened.
+    prompt = false
+
+[difftool "Visual Studio Code"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+    tool = Visual Studio Code
+
+[mergetool]
+    # Don't ask if mergetool should be opened.
+    prompt = false
+    keepBackup = false
+
+[mergetool "Visual Studio Code"]
+    cmd = code --wait $MERGED

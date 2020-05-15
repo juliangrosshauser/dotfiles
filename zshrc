@@ -83,6 +83,14 @@ source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh"
 
 # Configure keybindings
+
+# Helpful information for keybindings:
+#
+# * Use `read` command in terminal to obtain key sequences.
+# * List of zsh's standard widgets, i.e. commands that can be used with `bindkey`: http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html#Standard-Widgets
+# * Multiple key sequences can be bound to the same command by simply adding another `bindkey` line with the same command but a different key sequence.
+# * Table of keyboard shortcuts: https://en.wikipedia.org/wiki/Table_of_keyboard_shortcuts
+
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 

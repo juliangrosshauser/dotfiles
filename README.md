@@ -1,23 +1,12 @@
-# dotfiles
+# Dotfiles
 ![Platform](https://img.shields.io/badge/platform-macos%20%7C%20linux-lightgrey.svg)
 [![License](https://img.shields.io/badge/license-MIT-3f3f3f.svg)](http://choosealicense.com/licenses/mit)
 
-Several dotfiles for zsh, git, vim, macOS and more.
+Dotfiles for zsh, git, vim, Linux, WSL, macOS, and more.
 
-## Automatic Setup
+## Setup
 
-[setup.sh](setup.sh) will link all dotfiles to their correct destination for you.
-Don't worry, the script will automatically create backups of your previous dotfiles.
-
-Calling it without arguments will also install all necessary dependencies:
-```shell
-$ ./setup.sh
-```
-
-If you don't want to install the dependencies, just provide the `-l` switch as argument:
-```shell
-$ ./setup.sh -l
-```
+Run `./install` to set up the dotfiles automatically.
 
 ## License
 

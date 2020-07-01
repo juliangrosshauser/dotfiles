@@ -4,6 +4,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     export CC=clang
     export CXX=clang++
+
+    # Don't automatically update Homebrew when installing packages etc.
+    export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 
 export LC_ALL=en_US.UTF-8

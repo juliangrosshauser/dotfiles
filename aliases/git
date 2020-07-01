@@ -27,8 +27,3 @@ alias grb='git rebase'
 alias grbi='git rebase -i'
 alias grbc='git rebase --continue'
 alias grba='git rebase --abort'
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  not-expanding-alias git='hub'
-  alias ghpr='git pull-request'
-fi

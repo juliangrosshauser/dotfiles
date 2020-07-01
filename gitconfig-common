@@ -33,6 +33,11 @@
 [commit]
     gpgsign = true
 
+# https://git-scm.com/book/en/v2/Git-Tools-Rerere
+[rerere]
+    enabled = true
+    autoupdate = true
+
 [color]
     ui = true
 

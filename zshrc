@@ -98,6 +98,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   # Go back a word with ⌥←
   bindkey '^[^[[D' backward-word
   # Go forward a word with ⌥→
+  # Will also partially accept suggestions from zsh-autosuggestions.
   bindkey '^[^[[C' forward-word
 
   # Go to beginning of line with ⌘←
@@ -123,6 +124,7 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
   # Go back a word with Ctrl+←
   bindkey '^[[1;5D' backward-word
   # Go forward a word with Ctrl+→
+  # Will also partially accept suggestions from zsh-autosuggestions.
   bindkey '^[[1;5C' forward-word
 
   # Go to beginning of line with Fn+←

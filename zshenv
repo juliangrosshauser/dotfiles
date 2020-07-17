@@ -28,6 +28,10 @@ if [ -n "$GOPATH" ]; then
     export PATH="$GOPATH/bin:$PATH"
 fi
 
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 if [ -f /usr/libexec/java_home ]; then
     # java_home returns the path to a java home directory
     # specify java version with `java_home -v 1.x`, where

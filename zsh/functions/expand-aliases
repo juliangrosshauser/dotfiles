@@ -47,5 +47,6 @@ zle -N expand-aliases
 zle -N expand-aliases-and-accept-line
 
 bindkey ' ' expand-aliases # space to expand aliases
-bindkey '^ ' magic-space # control-space to bypass expansion
+# Commented out because it introduces issues when using Ctrl+Win+← and Ctrl+Win+→ as Home and End respectively.
+# bindkey '^ ' magic-space # control-space to bypass expansion
 bindkey '^M' expand-aliases-and-accept-line # enter to expand aliases before executing command

@@ -5,17 +5,13 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/findutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/grep/libexec/gnuman:$MANPATH"
 fi
 
-if [ -f "$HOME/.localrc" ]; then
-  source "$HOME/.localrc"
-fi
-
 if [ -d "$HOME/.asdf" ]; then
   # Initialize asdf version manager
   source "$HOME/.asdf/asdf.sh"
   fpath=("$ASDF_DIR/completions" $fpath)
 fi
 
-fpath=("$HOME/.zsh/prompts/pure" "$HOME/.zsh/plugins/zsh-completions/src" $fpath)
+fpath=("$HOME/.zsh/prompts/pure" "$HOME/.zsh/completions" "$HOME/.zsh/plugins/zsh-completions/src" $fpath)
 
 # Use pure prompt
 autoload -U promptinit; promptinit
@@ -67,7 +63,7 @@ setopt hist_reduce_blanks
 
 # The `expand-aliases` file needs to be sourced before the alias files,
 # because it provides the `not-expanding-alias` function.
-source "$HOME/.zsh/expand-aliases"
+source "$HOME/.zsh/functions/expand-aliases"
 
 for alias_file in ~/.aliases/*; do
   source "$alias_file"
@@ -159,4 +155,17 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
   export LIBGL_ALWAYS_INDIRECT=1
 fi
 
+# https://dystroy.org/broot/install
+if [ -f "$HOME/.cargo/bin/broot" ]; then
+  source "$HOME/.zsh/functions/br"
+fi
+
+if [ -d "$HOME/.anaconda" ]; then
+  eval "$("$HOME/.anaconda/bin/conda" shell.zsh hook)"
+fi
+
 export PATH="$HOME/.bin:$PATH"
+
+if [ -f "$HOME/.localrc" ]; then
+  source "$HOME/.localrc"
+fi

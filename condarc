@@ -1,5 +1,1 @@
 changeps1: False
-channels:
-  - fastai
-  - pytorch
-  - defaults

@@ -15,7 +15,7 @@ if [ -d "$HOME/.asdf" ]; then
   fpath=("$ASDF_DIR/completions" $fpath)
 fi
 
-fpath=("$HOME/.zsh/prompts/pure" "$HOME/.zsh/plugins/zsh-completions/src" $fpath)
+fpath=("$HOME/.zsh/prompts/pure" "$HOME/.zsh/completions" "$HOME/.zsh/plugins/zsh-completions/src" $fpath)
 
 # Use pure prompt
 autoload -U promptinit; promptinit

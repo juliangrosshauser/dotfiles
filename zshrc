@@ -5,10 +5,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:/usr/local/opt/findutils/libexec/gnuman:/usr/local/opt/gnu-sed/libexec/gnuman:/usr/local/opt/grep/libexec/gnuman:$MANPATH"
 fi
 
-if [ -f "$HOME/.localrc" ]; then
-  source "$HOME/.localrc"
-fi
-
 if [ -d "$HOME/.asdf" ]; then
   # Initialize asdf version manager
   source "$HOME/.asdf/asdf.sh"
@@ -160,3 +156,7 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
 fi
 
 export PATH="$HOME/.bin:$PATH"
+
+if [ -f "$HOME/.localrc" ]; then
+  source "$HOME/.localrc"
+fi

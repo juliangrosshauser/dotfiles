@@ -67,7 +67,7 @@ setopt hist_reduce_blanks
 
 # The `expand-aliases` file needs to be sourced before the alias files,
 # because it provides the `not-expanding-alias` function.
-source "$HOME/.zsh/expand-aliases"
+source "$HOME/.zsh/functions/expand-aliases"
 
 for alias_file in ~/.aliases/*; do
   source "$alias_file"

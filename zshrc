@@ -155,6 +155,10 @@ if [[ $(uname -r) == *"microsoft"* ]]; then
   export LIBGL_ALWAYS_INDIRECT=1
 fi
 
+if [ -d "$HOME/dev/anaconda" ]; then
+  eval "$("$HOME/dev/anaconda/bin/conda" shell.zsh hook)"
+fi
+
 export PATH="$HOME/.bin:$PATH"
 
 if [ -f "$HOME/.localrc" ]; then

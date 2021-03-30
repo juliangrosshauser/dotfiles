@@ -1,7 +1,5 @@
 [credential]
-    helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager.exe
-    # Enter credentials in modal dialog instead of command line. See: https://github.com/microsoft/Git-Credential-Manager-for-Windows/blob/master/Docs/Faq.md#q-why-does-my-gui-freeze-when-i-push-pull-or-fetch
-    modalprompt = true
+    helper = /mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe
 
 [diff]
     tool = Visual Studio Code
